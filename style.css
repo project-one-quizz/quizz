@@ -1,1 +1,19 @@
 
+body {
+    
+}
+header{
+    text-align: center;
+    padding: 20px;
+}
+div {
+ 
+    height:200px ;
+    width: 40%;    
+    padding: 10px 20px;
+        margin: auto;
+        border: 1px solid rgba( 0, 0, 0, 0.2 );
+        border-radius: 5px;
+        background-color: #eee;  
+        position: relative;
+}

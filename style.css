@@ -1,23 +1,17 @@
 
-body {
-    
+
+
+
+header {
+        margin: auto;
+        border: 1px solid rgba( 0, 0, 0, 0.2 );
+        border-radius: 5px;
+        background-color: #eee;  
+        position: relative;
+        text-align: center;
 }
-header{
-    text-align: center;
-    padding: 20px;
-}
-div {
- 
-    height:200px ;
-    width: 40%;    
-    padding: 10px 20px;
-    margin: auto;
-    border: 1px solid rgba( 0, 0, 0, 0.2 );
-    border-radius: 5px;
-    background-color: #eee;  
-    position: relative;
-}
-.next {
+
+#next-question-button {
   background-color: skyblue;
   color: blue;
   bottom: 20px;
@@ -32,22 +26,17 @@ div {
   border-radius: 12px;
   margin-top: 40px;
 }
-
-#radio {
-    position: absolute;
-    top: .38em;
-    left: .18em;
-    font-size: 1.6em;
-    color: #CB22ED;
-    line-height: 0;
-    display: inline-block;
- 
+.next-button {
+    text-align: center;
 }
+
 .h2 {
     color: black;
     font-size: 2;
 }
-.Score {
-    background-color: yellow;
-    font-size: 2.5em;
+
+.box-answer {
+    display : flex;
+    flex-direction: row;
+
 }

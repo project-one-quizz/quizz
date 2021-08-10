@@ -1,43 +1,114 @@
 
 
-var quiz=[
-
-{
-
- questions:['What is the distance between the Eurth and the sun', 'What is the largest mountain chains on Eurth',
- 'How write those books the CLAN of the CAVE BEAR' , 'How is the first personns visiting the Moon', 
- 'Who are the higtest gool scorers in football history', 'The greatest Men Tennis Players', 
- 'The most fames singer in the world', 'Most Influential films of all time', 
- 'What is the popular Movies']
-
-},
-
-{
-	ansuerQ1={ans1:'149.597.870km', ans2:'92.955.807km', ans3:'130.720.807km', ans4:'180.590.130km'}
-	ansuerQ2={ans1:'Himalaya', ans2:'Southen Great Escrpment', ans3:'Andes', ans4:'Rocky Mountains'}
-	ansuerQ3={ans1:'JESSIAN BROCKMOLE', ans2:'SEBASTIAN BARRY', ans3:'JEAN M AUEL', ans4:'MARIE BENEDICT'}
-	ansuerQ4={ans1:'Sally Ride', ans2:'Yuri Gagarin', ans3:'Neil Armstrong', ans4:'Pete Conrad'}
-	ansuerQ5={ans1:'Pele', ans2:'Cristano', ans3:'Missi', ans4:'Romario'}
-	ansuerQ6={ans1:'Andre Agassi', ans2:'Bjorn Borg', ans3:'Novak Djokovic', ans4:'Rafael Nadal'}
-	ansuerQ7={ans1:'Madona', ans2:'Eminem', ans3:'Beyonce', ans4:'Lady Gaga'}
-	ansuerQ8={ans1:'The wizard of Oz', ans2:'Fantasia', ans3:'Casablanca', ans4:'The Birth of a Nation'}
-	ansuerQ9={ans1:'Citisent Kane', ans2:'The God father', ans3:'Pulp Fiction', ans4:'Aspace Odyssey'}
-},
-
-{
-
-right ansuers:['149.597.870km', 'Andes', 'JESSIAN BROCKMOLE', 'Neil Armstrong', 'Pele', 'Novak Djokovic', 'Eminem', 'The Birth of a Nation', 'The God father']
-},
+// q = question
+// o = options
+// a = answer
+// array of objects
+DataQuiz = [
+    {
+        q : "What is the standard distance between the target and archer in Olympics?",
+        o : [
+          "50 meters",
+          "70 meters",
+          "100 meters",
+          "120 meters"
+        ],
+        a : '70' 
+      },
+      {
+        q : "Which is the highest number on a standard roulette wheel?",
+        o : [
+          "22",
+          "24",
+          "32",
+          "36"
+        ],
+        a : '36'
+      },
+      {
+        q : "How much wood could a woodchuck chuck if a woodchuck would chuck wood?",
+        o : [
+          "400 pounds",
+          "550 pounds",
+          "700 pounds",
+          "750 pounds"
+        ],
+        a : '700'
+      },
+      {
+        q : "Which is the seventh planet from the sun?",
+        o : [
+          "Uranus",
+          "Earth",
+          "Pluto",
+          "Mars"
+        ],
+        a : 'Uranus'
+      },
+      {
+        q : "Which is the largest ocean on Earth?",
+        o : [
+          "Atlantic Ocean",
+          "Indian Ocean",
+          "Arctic Ocean",
+          "Pacific Ocean"
+        ],
+        a : 'Pacific'
+      }
 ]
-var ansuers=['ansuerQ1', 'ansuerQ2', 'ansuerQ3', 'ansuerQ4', 'ansuerQ5', 'ansuerQ6', 'ansuerQ7', 'ansuerQ8', 'ansuerQ9']
 var score =0;
-function myScore(ansuers){
-	for (var i=0; i<ansuers.length; i++) {
-     if (ansuers[i] === true){
-     	score = score +1;
-     }
-     return score;
+var counter = 0; 
+$('#next-question-button').click(function(){  // click function 
+  console.log($('label input:checked').val())
+  if ($('label input:checked').val() === DataQuiz[counter].a){ // check the correct answer and increment the score by 10 points
+    score += 10;
+  }
+  
+  if (counter < DataQuiz.length ) {  // increment the counter when clicking 
+  counter++;
+  console.log(DataQuiz.length);
+  if (counter === DataQuiz.length ) {  // if condition when finish all the quizz questions
+    $(".box").hide()                   // show the score and hide the questions with the answers
+    alert('your score is :'+score)
+    
+  }   // change the content when clicking 
+  $('.text').text(DataQuiz[counter].q);
+  $('#option1').replaceWith(`<label id="option1" for="ans1">
+  <input id="ans1" value=`+DataQuiz[counter].o[0]+` type="radio" name="radio"/>`+DataQuiz[counter].o[0]+`
+  </label>`)
+  $('#option2').replaceWith(`<label id="option2" for="ans2">
+  <input id="ans2" value=`+DataQuiz[counter].o[1]+` type="radio" name="radio"/>`+DataQuiz[counter].o[1]+`
+  </label>`);
+  $('#option3').replaceWith(`<label id="option3" for="ans3">
+  <input id="ans3" value=`+DataQuiz[counter].o[2]+` type="radio" name="radio"/>`+DataQuiz[counter].o[2]+`
+  </label>`);
+  $('#option4').replaceWith(`<label id="option4" for="ans4">
+  <input id="ans4" value=`+DataQuiz[counter].o[3]+` type="radio" name="radio"/>`+DataQuiz[counter].o[3]+`
+  </label>`);
 }
-}
+console.log(counter )
+console.log(score)
+})
 
+// show the first question with answers when open the page
+$('.box').append(`
+<h2 class='text'>`+DataQuiz[counter].q+`</h2>
+<div class="answers">
 
+<label id="option1" for="ans1">
+<input id="ans1" value=`+DataQuiz[counter].o[0]+` type="radio" name="radio"/>`+DataQuiz[counter].o[0]+`
+</label><br>
+
+<label id="option2" for="ans2">
+<input id="ans2" value=`+DataQuiz[counter].o[1]+` type="radio" name="radio">`+DataQuiz[counter].o[1]+`
+</label><br>
+
+<label id="option3" for="ans3">
+<input id="ans3" value=`+DataQuiz[counter].o[2]+` type="radio" name="radio">`+DataQuiz[counter].o[2]+`
+</label><br>
+
+<label id="option4" for="ans4">
+<input id="ans4" value=`+DataQuiz[counter].o[3]+` type="radio" name="radio">`+DataQuiz[counter].o[3]+`
+</label>
+</div>`
+)

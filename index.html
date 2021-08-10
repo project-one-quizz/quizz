@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,38 +15,29 @@
 
 </header>
 <body>
+
    <div class="question1">
+ /*hide and show with jquery*/
+<h2 class='text'>Questions</h2>
+
+ <label for="ans1">
+  <input id="ans1" value="ans1" type="radio" name="radio">ans1
+</label>
+<label for="ans2">
+  <input id="ans2" value="ans2" type="radio" name="radio">ans2
+</label>
+<label for="ans3">
+  <input id="ans3" value="ans3" type="radio" name="radio">ans3
+</label>
+<label for="ans4">
+  <input id="ans4" value="ans4" type="radio" name="radio">ans4
+</label>
 
    </div>
-   <div class="question2">
-
-   </div>
-   <div class="question3">
-
-   </div>
-   <div class="question4">
-
-   </div>
-   <div class="question5">
-
-   </div>
-   <div class="question6">
-
-   </div>
-   <div class="question7">
-
-   </div>
-   <div class="question8">
-
-   </div>
-   <div class="question9">
-
-   </div>
-   <div class="question10">
-
-   </div>>
    
-   
+   // add a button to go next, ,on click function that hide the current q and append the next one
+   <button class='next'>Next</button>
+   <button onclick="myScore" id="demo">Score</button>
    
    
     <script src='https://code.jquery.com/jquery-2.2.4.js'></script>

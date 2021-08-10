@@ -16,3 +16,8 @@ div {
         background-color: #eee;  
         position: relative;
 }
+#nextQuestionButton {
+    top: 106%;
+    left: 50%;
+    position: absolute;
+}
